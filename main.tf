@@ -38,7 +38,7 @@ resource "google_compute_instance_template" "main" {
   labels = "${var.instance_labels}"
 
   network_interface {
-    network    = "${var.subnetwork == "" ? var.network : ""}"
+    network    = "${var.subnetwork != "" ? var.network : ""}"
     subnetwork = "${var.subnetwork}"
     #    access_config      = "${var.access_config}"
     #address            = "${var.network_ip}"
